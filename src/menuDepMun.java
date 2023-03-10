@@ -37,6 +37,18 @@ public class menuDepMun {
             }
         }else {JOptionPane.showMessageDialog(Main.frame, "Por favor ingrese todos los campos.");}
     }
+    private void guardarMun(){
+        if (!txtNombreMun.getText().equals("")){
+
+            municipio.misMunicipios.add(new municipio("","",0,0,"","",
+                    "", cboCodigoDep.getSelectedItem().toString(),txtNombreMun.getText()));
+
+            System.out.println();
+            for (municipio i: municipio.misMunicipios) {
+                System.out.println(i);
+            }
+        }
+    }
     private void guardarCambiosDep(int num){
 
         departamento.misDepartamentos.get(num).setNombreDep(txtNombreDep.getText());
@@ -45,6 +57,16 @@ public class menuDepMun {
 
         System.out.println();
         for (departamento i : departamento.misDepartamentos) {
+            System.out.println(i);
+        }
+    }
+    private void guardarCambiosMun(int num){
+
+        municipio.misMunicipios.get(num).setNombreMun(txtNombreMun.getText());
+        municipio.misMunicipios.get(num).setCodigoDeprtamento(departamento.misDepartamentos.get(cboCodigoDep.getSelectedIndex()).getNombreDep());
+
+        System.out.println();
+        for (municipio i : municipio.misMunicipios) {
             System.out.println(i);
         }
     }
@@ -58,6 +80,16 @@ public class menuDepMun {
             System.out.println(i);
         }
 
+    }
+    private void eliminiarMun(){
+        int num = cboAddMun.getSelectedIndex();
+
+        municipio.misMunicipios.remove(num);
+
+        System.out.println();
+        for (municipio i: municipio.misMunicipios) {
+            System.out.println(i);
+        }
     }
     public static void irDepMun(){
         Main.frame.setContentPane(new menuDepMun().DepMun);
@@ -123,11 +155,16 @@ public class menuDepMun {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                try {
+                    cboCodigoRegion.removeAllItems();
 
-                cboCodigoRegion.removeAllItems();
-                for (region i: region.misRegiones) {
-                    cboCodigoRegion.addItem(i.getCodigo());
+                    for (region i: region.misRegiones) {
+                        cboCodigoRegion.addItem(i.getCodigo());
+                    }
+                }catch (Exception E){
+                    System.out.println("Here");
                 }
+
             }
         });
         cboCodigoRegion.addActionListener(new ActionListener() {
@@ -137,6 +174,66 @@ public class menuDepMun {
                 int num = cboCodigoRegion.getSelectedIndex();
 
                 txtRegionDep.setText(region.misRegiones.get(num).getNombre());
+            }
+        });
+        guardarNuevoButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                guardarMun();
+            }
+        });
+        cboCodigoDep.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+
+                try {
+                    cboCodigoDep.removeAllItems();
+                    for (departamento i: departamento.misDepartamentos) {
+                        cboCodigoDep.addItem(i.getNombreDep());
+                    }
+                }catch (Exception E){
+                    System.out.println("Here");
+                }
+
+            }
+        });
+        cboAddMun.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+
+                cboAddMun.removeAllItems();
+                for (municipio i : municipio.misMunicipios) {
+                    cboAddMun.addItem(i.getNombreMun());
+                }
+            }
+        });
+        cboAddMun.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num = cboAddMun.getSelectedIndex();
+
+                try {
+                    cboCodigoDep.setSelectedItem(municipio.misMunicipios.get(num).getCodigoDeprtamento());
+                    txtNombreMun.setText(municipio.misMunicipios.get(num).getNombreMun());
+
+                }catch (Exception E){
+                    System.out.println("Here");
+                }
+            }
+        });
+        guardarCambiosButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num = cboAddMun.getSelectedIndex();
+                guardarCambiosMun(num);
+            }
+        });
+        eliminarButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                eliminiarMun();
             }
         });
     }

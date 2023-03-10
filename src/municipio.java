@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class municipio extends departamento{
     private String codigoDeprtamento;
     private String NombreMun;
+    public static ArrayList<municipio> misMunicipios = new ArrayList<>();
 
     public municipio(String codigo, String nombre, double pEspecial, double pEstandar, String codigoRegion,
                      String region, String nombreDep, String codigoDeprtamento, String nombreMun) {

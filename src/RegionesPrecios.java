@@ -5,7 +5,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class RegionesPrecios {
-    private JPanel RegYPre;
+    public JPanel RegYPre;
     private JButton regresarButton;
     private JTextField txtCodigo;
     private JTextField txtNombre;
@@ -18,10 +18,15 @@ public class RegionesPrecios {
 
     private void GuardarRegion(){
         if (!txtCodigo.getText().equals("") && !txtNombre.getText().equals("") &&
-                txtPEspecial.getText().equals("") && !txtPEstandar.getText().equals("")){
+                !txtPEspecial.getText().equals("") && !txtPEstandar.getText().equals("")){
             try {
                 region.misRegiones.add(new region(txtCodigo.getText(), txtNombre.getText(),
                         Integer.parseInt(txtPEspecial.getText()), Integer.parseInt(txtPEstandar.getText())));
+
+                txtCodigo.setText("");
+                txtNombre.setText("");
+                txtPEstandar.setText("");
+                txtPEspecial.setText("");
 
                 System.out.println();
                 for (region i: region.misRegiones) {
@@ -35,13 +40,18 @@ public class RegionesPrecios {
     }
     private void modificarRegion(int num){
         if (!txtCodigo.getText().equals("") && !txtNombre.getText().equals("") &&
-                txtPEspecial.getText().equals("") && !txtPEstandar.getText().equals("")){
+                !txtPEspecial.getText().equals("") && !txtPEstandar.getText().equals("")){
 
             try {
                 region.misRegiones.get(num).setCodigo(txtCodigo.getText());
                 region.misRegiones.get(num).setNombre(txtNombre.getText());
-                region.misRegiones.get(num).setpEspecial(Integer.parseInt(txtPEspecial.getText()));
-                region.misRegiones.get(num).setpEstandar(Integer.parseInt(txtPEstandar.getText()));
+                region.misRegiones.get(num).setpEstandar(Double.parseDouble(txtPEstandar.getText()));
+                region.misRegiones.get(num).setpEspecial(Double.parseDouble(txtPEspecial.getText()));
+
+                System.out.println();
+                for (region i: region.misRegiones) {
+                    System.out.println(i);
+                }
             }catch (Exception E){JOptionPane.showMessageDialog(Main.frame, "Los campos de precio deben se numeros.");}
 
         System.out.println();
@@ -53,6 +63,16 @@ public class RegionesPrecios {
     }
     private void eliminarRegion(int num){
         region.misRegiones.remove(num);
+
+        System.out.println();
+        for (region i: region.misRegiones) {
+            System.out.println(i);
+        }
+    }
+    public static void irRegionesYp(){
+        Main.frame.setContentPane(new RegionesPrecios().RegYPre);
+        Main.frame.pack();
+        Main.frame.setSize(500,400);
     }
 
     public RegionesPrecios() {
@@ -88,8 +108,8 @@ public class RegionesPrecios {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                cboAddRegion.removeAllItems();
 
+                cboAddRegion.removeAllItems();
                 for (region i: region.misRegiones) {
                     cboAddRegion.addItem(i.getNombre());
                 }
@@ -99,12 +119,17 @@ public class RegionesPrecios {
         cboAddRegion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int num = cboAddRegion.getSelectedIndex();
+                try {
+                    int num = cboAddRegion.getSelectedIndex();
 
-                txtCodigo.setText(region.misRegiones.get(num).getCodigo());
-                txtNombre.setText(region.misRegiones.get(num).getNombre());
-                txtPEspecial.setText(String.valueOf(region.misRegiones.get(num).getpEspecial()));
-                txtPEstandar.setText(String.valueOf(region.misRegiones.get(num).getpEstandar()));
+                    txtCodigo.setText(region.misRegiones.get(num).getCodigo());
+                    txtNombre.setText(region.misRegiones.get(num).getNombre());
+                    txtPEspecial.setText(String.valueOf(region.misRegiones.get(num).getpEspecial()));
+                    txtPEstandar.setText(String.valueOf(region.misRegiones.get(num).getpEstandar()));
+                }catch (Exception E){
+                    System.out.println("here");
+                }
+
             }
         });
     }

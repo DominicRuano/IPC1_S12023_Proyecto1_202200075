@@ -12,7 +12,6 @@ public class menuAdmin {
     public static void irMenuadmin(){
         Main.frame.setContentPane(new menuAdmin().MenuAdmin);
         Main.frame.pack();
-        Main.frame.setVisible(true);
         Main.frame.setSize(450,200);
     }
 public menuAdmin() {
@@ -26,6 +25,18 @@ public menuAdmin() {
         @Override
         public void actionPerformed(ActionEvent e) {
             menukioscos.irMenuKiosco();
+        }
+    });
+    regionesYPreciosButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            RegionesPrecios.irRegionesYp();
+        }
+    });
+    departamentosYMunicipiosButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            menuDepMun.irDepMun();
         }
     });
 }

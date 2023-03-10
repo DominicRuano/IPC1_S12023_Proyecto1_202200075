@@ -8,7 +8,7 @@ public class region {
     public static ArrayList<region> misRegiones = new ArrayList<>();
 
     public region(String codigo, String nombre, double pEspecial, double pEstandar) {
-        Codigo = codigo;
+        Codigo = codigo.toUpperCase();
         this.nombre = nombre;
         this.pEspecial = pEspecial;
         this.pEstandar = pEstandar;

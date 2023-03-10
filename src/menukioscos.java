@@ -17,6 +17,14 @@ public class menukioscos {
     private void guardarKiosco(){
         if (!txtCodigo.getText().equals("") && !txtNombre.getText().equals("")){
             kiosco.misKioscos.add(new kiosco(txtNombre.getText(),txtCodigo.getText(), cboRegion.getSelectedItem().toString()));
+
+            txtNombre.setText("");
+            txtCodigo.setText("");
+
+            System.out.println();
+            for (kiosco i: kiosco.misKioscos) {
+                System.out.println(i);
+            }
         }else {JOptionPane.showMessageDialog(Main.frame, "Por favor ingrese todos los campos.");}
     }
     private void modificarKioco(int num){
@@ -24,10 +32,23 @@ public class menukioscos {
             kiosco.misKioscos.get(num).setCodigokiosco(txtCodigo.getText());
             kiosco.misKioscos.get(num).setNombre(txtNombre.getText());
             kiosco.misKioscos.get(num).setCodigoRegion(cboRegion.getSelectedItem().toString());
+
+            System.out.println();
+            for (kiosco i: kiosco.misKioscos) {
+                System.out.println(i);
+            }
         }else {JOptionPane.showMessageDialog(Main.frame, "Por favor ingrese todos los campos.");}
     }
     private void eliminiarKiosco(int num){
         kiosco.misKioscos.remove(num);
+
+        txtNombre.setText("");
+        txtCodigo.setText("");
+
+        System.out.println();
+        for (kiosco i: kiosco.misKioscos) {
+            System.out.println(i);
+        }
     }
     public static void irMenuKiosco(){
         Main.frame.setContentPane(new menukioscos().MenuKioscos);
@@ -53,9 +74,9 @@ public class menukioscos {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                cboRegion.removeAllItems();
+                cboAddKiosco.removeAllItems();
                 for (kiosco i : kiosco.misKioscos) {
-                    cboRegion.addItem(i.getNombre());
+                    cboAddKiosco.addItem(i.getNombre());
                 }
             }
         });
@@ -76,7 +97,11 @@ public class menukioscos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int num = cboAddKiosco.getSelectedIndex();
-                modificarKioco(num);
+                try {
+                    modificarKioco(num);
+                }catch (Exception E){
+                    System.out.println("Here");
+                }
             }
         });
         eliminarButton.addActionListener(new ActionListener() {
@@ -97,9 +122,5 @@ public class menukioscos {
                 }
             }
         });
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 }

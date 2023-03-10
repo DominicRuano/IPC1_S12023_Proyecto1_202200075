@@ -1,42 +1,42 @@
 import java.util.ArrayList;
 
 public class departamento extends region{
-    private String codigoRegion;
-    private String region;
+    private String codigoRegionDep;
+    private String regionDep;
     private String nombreDep;
     public static ArrayList<departamento> misDepartamentos = new ArrayList<>();
 
-    public departamento(String codigo, String nombre, double pEspecial, double pEstandar, String codigoRegion,
-                        String region, String nombreDep) {
+
+    public departamento(String codigo, String nombre, double pEspecial, double pEstandar, String codigoRegionDep, String regionDep, String nombreDep) {
         super(codigo, nombre, pEspecial, pEstandar);
-        this.codigoRegion = codigoRegion;
-        this.region = region;
+        this.codigoRegionDep = codigoRegionDep;
+        this.regionDep = regionDep;
         this.nombreDep = nombreDep;
     }
 
     @Override
     public String toString() {
         return "departamento{" +
-                "codigoRegion='" + codigoRegion + '\'' +
-                ", region='" + region + '\'' +
+                "codigoRegionDep='" + codigoRegionDep + '\'' +
+                ", regionDep='" + regionDep + '\'' +
                 ", nombreDep='" + nombreDep + '\'' +
                 '}';
     }
 
-    public String getCodigoRegion() {
-        return codigoRegion;
+    public String getCodigoRegionDep() {
+        return codigoRegionDep;
     }
 
-    public void setCodigoRegion(String codigoRegion) {
-        this.codigoRegion = codigoRegion;
+    public void setCodigoRegionDep(String codigoRegionDep) {
+        this.codigoRegionDep = codigoRegionDep;
     }
 
-    public String getRegion() {
-        return region;
+    public String getRegionDep() {
+        return regionDep;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegionDep(String regionDep) {
+        this.regionDep = regionDep;
     }
 
     public String getNombreDep() {

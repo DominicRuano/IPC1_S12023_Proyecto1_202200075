@@ -76,21 +76,25 @@
           <text value="Nombre:"/>
         </properties>
       </component>
-      <component id="625aa" class="javax.swing.JTextField" binding="txtRegionMun">
+      <component id="625aa" class="javax.swing.JTextField" binding="txtRegionDep">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
-      <component id="82aa0" class="javax.swing.JTextField" binding="txtNombreDep">
+      <component id="82aa0" class="javax.swing.JTextField" binding="txtNombreMun">
         <constraints>
           <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="6357a" class="javax.swing.JLabel">
         <constraints>
@@ -100,17 +104,11 @@
           <text value="Nombre:"/>
         </properties>
       </component>
-      <component id="33437" class="javax.swing.JTextField" binding="txtNombreMun">
+      <component id="33437" class="javax.swing.JTextField" binding="txtNombreDep">
         <constraints>
           <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="b7555" class="javax.swing.JComboBox" binding="cboCodigoRegion">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
@@ -200,6 +198,12 @@
         <properties>
           <text value="Eliminar"/>
         </properties>
+      </component>
+      <component id="b7555" class="javax.swing.JComboBox" binding="cboCodigoRegion">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>

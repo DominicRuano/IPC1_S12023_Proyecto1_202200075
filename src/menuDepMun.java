@@ -1,12 +1,15 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Objects;
 
 public class menuDepMun {
     private JButton regresarButton;
-    private JTextField txtRegionMun;
-    private JTextField txtNombreDep;
+    private JTextField txtRegionDep;
     private JTextField txtNombreMun;
+    private JTextField txtNombreDep;
     private JComboBox cboCodigoRegion;
     private JComboBox cboCodigoDep;
     private JComboBox cboAddMun;
@@ -18,7 +21,44 @@ public class menuDepMun {
     private JButton guardarNuevoButton1;
     private JButton eliminarButton1;
     public JPanel DepMun;
+    private void guardarDep(int num){
+        if (!txtRegionDep.getText().equals("") && !txtNombreDep.getText().equals("")){
 
+            departamento.misDepartamentos.add(new departamento("","",0,0,
+                    region.misRegiones.get(num).getCodigo(),
+                    txtRegionDep.getText(),
+                    txtNombreDep.getText()));
+
+            txtNombreDep.setText("");
+
+            System.out.println();
+            for (departamento i : departamento.misDepartamentos) {
+                System.out.println(i);
+            }
+        }else {JOptionPane.showMessageDialog(Main.frame, "Por favor ingrese todos los campos.");}
+    }
+    private void guardarCambiosDep(int num){
+
+        departamento.misDepartamentos.get(num).setNombreDep(txtNombreDep.getText());
+        departamento.misDepartamentos.get(num).setRegionDep(txtRegionDep.getText());
+        departamento.misDepartamentos.get(num).setCodigoRegionDep(region.misRegiones.get(num).getCodigo());
+
+        System.out.println();
+        for (departamento i : departamento.misDepartamentos) {
+            System.out.println(i);
+        }
+    }
+    private void eliminarDep(){
+        int num = cboAddDep.getSelectedIndex();
+
+        departamento.misDepartamentos.remove(num);
+
+        System.out.println();
+        for (departamento i: departamento.misDepartamentos) {
+            System.out.println(i);
+        }
+
+    }
     public static void irDepMun(){
         Main.frame.setContentPane(new menuDepMun().DepMun);
         Main.frame.pack();
@@ -35,7 +75,68 @@ public class menuDepMun {
         guardarNuevoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int num = cboCodigoRegion.getSelectedIndex();
+                guardarDep(num);
+            }
+        });
+        guardarCambiosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num = cboAddDep.getSelectedIndex();
+                guardarCambiosDep(num);
+            }
+        });
+        eliminarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                eliminarDep();
+            }
+        });
+        cboAddDep.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
 
+                cboAddDep.removeAllItems();
+                for (departamento i : departamento.misDepartamentos) {
+                    cboAddDep.addItem(i.getNombreDep());
+                }
+            }
+        });
+        cboAddDep.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num = cboAddDep.getSelectedIndex();
+
+                try {
+                    cboCodigoRegion.setSelectedItem(departamento.misDepartamentos.get(num).getCodigoRegionDep());
+                    txtRegionDep.setText(departamento.misDepartamentos.get(num).getRegionDep());
+                    txtNombreDep.setText(departamento.misDepartamentos.get(num).getNombreDep());
+
+
+                }catch (Exception E ){
+                    System.out.println("Here");
+                }
+            }
+        });
+        cboCodigoRegion.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+
+                cboCodigoRegion.removeAllItems();
+                for (region i: region.misRegiones) {
+                    cboCodigoRegion.addItem(i.getCodigo());
+                }
+            }
+        });
+        cboCodigoRegion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int num = cboCodigoRegion.getSelectedIndex();
+
+                txtRegionDep.setText(region.misRegiones.get(num).getNombre());
             }
         });
     }

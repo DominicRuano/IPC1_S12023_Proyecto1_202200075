@@ -23,7 +23,7 @@ public class Autenticacion{
     public static void irAutenticacion(){
         Main.frame.setContentPane(new Autenticacion().Autenticacion);
         Main.frame.pack();
-        Main.frame.setSize(400,500);
+        Main.frame.setSize(400,300);
     }
     public Autenticacion() {
         iniciarSesionButton.addActionListener(new ActionListener() {
@@ -32,10 +32,7 @@ public class Autenticacion{
                 if (txtCorreo.getText().equals(correo) && txtContrasena.getText().equals(pass)){
 
                     System.out.println("Inicio con usuario Master");
-
-                    Main.frame.setContentPane(new menuAdmin().MenuAdmin);
-                    Main.frame.pack();
-                    Main.frame.setSize(500,300);
+                    menuAdmin.irMenuadmin();
 
                 } else if (validarCredenciales()) {
                     //funcion para ir al menu de usuarios
@@ -50,9 +47,7 @@ public class Autenticacion{
         crearUsuarioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.frame.setContentPane(new registroUsuarios().registroUsuario);
-                Main.frame.pack();
-                Main.frame.setSize(500,600);
+                registroUsuarios.irRegistrousuario();
             }
         });
     }

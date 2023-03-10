@@ -11,6 +11,6 @@ public class Main {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(400,500);
+        frame.setSize(400,300);
     }
 }

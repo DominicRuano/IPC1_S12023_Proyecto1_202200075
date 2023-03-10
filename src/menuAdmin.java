@@ -9,11 +9,23 @@ public class menuAdmin {
     private JButton reportesButton;
     public JPanel MenuAdmin;
     private JButton regresarButton;
+    public static void irMenuadmin(){
+        Main.frame.setContentPane(new menuAdmin().MenuAdmin);
+        Main.frame.pack();
+        Main.frame.setVisible(true);
+        Main.frame.setSize(450,200);
+    }
 public menuAdmin() {
     regresarButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             Autenticacion.irAutenticacion();
+        }
+    });
+    kioscosButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            menukioscos.irMenuKiosco();
         }
     });
 }

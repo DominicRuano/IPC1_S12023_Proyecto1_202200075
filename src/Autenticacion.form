@@ -28,27 +28,6 @@
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="28c4" class="javax.swing.JLabel" binding="correoLabel">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Correo:"/>
-        </properties>
-      </component>
-      <component id="d40c5" class="javax.swing.JLabel" binding="contrasenaLabel">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Contraseña:"/>
-        </properties>
-      </component>
-      <hspacer id="5985d">
-        <constraints>
-          <grid row="2" column="2" row-span="2" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
       <component id="9fc64" class="javax.swing.JTextField" binding="txtCorreo">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -87,6 +66,22 @@
         </constraints>
         <properties>
           <text value="Crear usuario"/>
+        </properties>
+      </component>
+      <component id="28c4" class="javax.swing.JLabel" binding="correoLabel">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Correo:"/>
+        </properties>
+      </component>
+      <component id="d40c5" class="javax.swing.JLabel" binding="contrasenaLabel">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Contraseña:"/>
         </properties>
       </component>
     </children>

@@ -22,6 +22,11 @@ public class registroUsuarios {
     private JTextField txtFecha;
     private JButton regresarButton;
     private String direcccion = "";
+    public static void irRegistrousuario(){
+        Main.frame.setContentPane(new registroUsuarios().registroUsuario);
+        Main.frame.pack();
+        Main.frame.setSize(400,600);
+    }
 
     private void crearUsuario(){
         usuario.misUsuarios.add(new usuario(txtCorreo.getText(),

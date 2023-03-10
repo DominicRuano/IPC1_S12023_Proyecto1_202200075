@@ -63,7 +63,7 @@ public class registroUsuarios {
             public void actionPerformed(ActionEvent e) {
                 if (!txtNombre.getText().equals("") && !txtCorreo.getText().equals("") && !txtApellido.getText().equals("") &&
                         !txtContra.getText().equals("") && !txtDpi.getText().equals("") && !txtFecha.getText().equals("") &&
-                        !cboGenero.getSelectedItem().equals("") && !cboNacionalidad.getSelectedItem().equals("") &&
+                        !cboGenero.getSelectedItem().equals("") && !cboNacionalidad.getSelectedItem().equals("") && !txtAlias.getText().equals("") &&
                         !cboRol.getSelectedItem().equals("") && !txtTelefono.getText().equals("") && !cboRol.getSelectedItem().equals("")){
 
                     if (!txtContra.getText().equals(txtContra.getText().toLowerCase()) && !txtContra.getText().equals(txtContra.getText().toUpperCase()))  {
@@ -77,6 +77,20 @@ public class registroUsuarios {
                                     !txtContra.getText().contains("@") || !txtContra.getText().contains("#") || !txtContra.getText().contains("$") ||
                                     !txtContra.getText().contains("+") || !txtContra.getText().contains("&") || !txtContra.getText().contains("*") ||
                                     !txtContra.getText().contains("~")){
+
+                                txtNombre.setText("");
+                                txtCorreo.setText("");
+                                txtApellido.setText("");
+                                txtContra.setText("");
+                                txtDpi.setText("");
+                                txtAlias.setText("");
+                                txtFecha.setText("");
+                                cboGenero.setSelectedItem("");
+                                cboNacionalidad.setSelectedItem("");
+                                cboRol.setSelectedItem("");
+                                txtTelefono.setText("");
+                                cboRol.setSelectedItem("");
+
 
                                 crearUsuario();
 

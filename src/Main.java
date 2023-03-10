@@ -8,6 +8,7 @@ public class Main {
         frame = new JFrame("Ingreso de Credenciales");
         frame.setContentPane(new Autenticacion().Autenticacion);
         //frame.setContentPane(new registroUsuarios().registroUsuario);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setSize(400,500);

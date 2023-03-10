@@ -108,9 +108,7 @@ public class registroUsuarios {
         regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.frame.setContentPane(new Autenticacion().Autenticacion);
-                Main.frame.pack();
-                Main.frame.setSize(400,500);
+                Autenticacion.irAutenticacion();
             }
         });
     }

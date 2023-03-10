@@ -86,6 +86,17 @@ public class menukioscos {
                 eliminiarKiosco(num);
             }
         });
+        cboRegion.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                cboRegion.removeAllItems();
+
+                for (region i: region.misRegiones) {
+                    cboRegion.addItem(i.getCodigo());
+                }
+            }
+        });
     }
 
     private void createUIComponents() {

@@ -39,5 +39,11 @@ public menuAdmin() {
             menuDepMun.irDepMun();
         }
     });
+    reportesButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            menuReportes.irReportes();
+        }
+    });
 }
 }

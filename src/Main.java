@@ -12,6 +12,9 @@ public class Main {
         region.misRegiones.add(new region("soc", "Suroccidente", 29.00, 34.00));
         region.misRegiones.add(new region("noc", "Norocidente", 40.00, 44.50));
 
+        usuario.misUsuarios.add(new usuario("11", "", "", "", "", "",
+                "", "", "", "", "", ""));
+
         frame = new JFrame("Ingreso de Credenciales");
         frame.setContentPane(new Autenticacion().Autenticacion);
         //frame.setContentPane(new registroUsuarios().registroUsuario);

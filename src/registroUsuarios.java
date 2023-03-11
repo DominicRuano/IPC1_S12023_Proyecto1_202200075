@@ -32,7 +32,7 @@ public class registroUsuarios {
         usuario.misUsuarios.add(new usuario(txtCorreo.getText(),
                 txtNombre.getText(),
                 txtApellido.getText(),
-                txtContra.getSelectedText(),
+                txtContra.getText(),
                 txtDpi.getText(),
                 txtFecha.getText(),
                 cboGenero.getSelectedItem().toString(),
@@ -83,6 +83,8 @@ public class registroUsuarios {
                                     !txtContra.getText().contains("+") || !txtContra.getText().contains("&") || !txtContra.getText().contains("*") ||
                                     !txtContra.getText().contains("~")){
 
+                                crearUsuario();
+
                                 txtNombre.setText("");
                                 txtCorreo.setText("");
                                 txtApellido.setText("");
@@ -95,9 +97,6 @@ public class registroUsuarios {
                                 cboRol.setSelectedItem("");
                                 txtTelefono.setText("");
                                 cboRol.setSelectedItem("");
-
-
-                                crearUsuario();
 
                                 System.out.println();
                                 for (usuario i : usuario.misUsuarios) {

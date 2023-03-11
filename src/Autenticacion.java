@@ -12,8 +12,11 @@ public class Autenticacion{
     private JButton crearUsuarioButton;
     public String correo = "";
     public String pass = "";
+    public static int idUser= -1;
     public boolean validarCredenciales(){
+        idUser = -1;
         for (usuario i : usuario.misUsuarios) {
+            idUser += 1;
             if (txtCorreo.getText().equals(i.getCorreo()) && txtContrasena.getText().equals(i.getPassword())){
                 return true;
             }
@@ -35,7 +38,7 @@ public class Autenticacion{
                     menuAdmin.irMenuadmin();
 
                 } else if (validarCredenciales()) {
-                    //funcion para ir al menu de usuarios
+                    menuUser.irMenuUser();
                 } else {
                     System.out.println("Credenciales incorrectas");
 

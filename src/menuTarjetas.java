@@ -100,8 +100,11 @@ public class menuTarjetas {
 
                     for (tarjeta i: tarjeta.misTarjetas) {
 
-                        String num = "XXXXXXXXXXXX" + i.getNumero().substring(i.getNumero().length()-4);
-                        cboAddTarjeta.addItem(num);
+                        if (Autenticacion.idUser == i.getIdUser()){
+                            String num = "XXXXXXXXXXXX" + i.getNumero().substring(i.getNumero().length()-4);
+
+                            cboAddTarjeta.addItem(num);
+                        }
                     }
                 }catch (Exception E){
                     System.out.println("here");

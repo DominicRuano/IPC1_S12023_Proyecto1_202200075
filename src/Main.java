@@ -14,6 +14,8 @@ public class Main {
 
         usuario.misUsuarios.add(new usuario("11", "", "", "", "", "",
                 "", "", "", "", "", ""));
+        usuario.misUsuarios.add(new usuario("22", "", "", "", "", "",
+                "", "", "", "", "", ""));
 
         frame = new JFrame("Ingreso de Credenciales");
         frame.setContentPane(new Autenticacion().Autenticacion);

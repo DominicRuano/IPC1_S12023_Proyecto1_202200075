@@ -1,10 +1,13 @@
-public class datoFact {
+import java.util.ArrayList;
+
+public class datosFactura {
     private String nombre;
     private String direccion;
     private String Nit;
     private int idUser;
+    public static ArrayList<datosFactura> misFacturas = new ArrayList<>();
 
-    public datoFact(String nombre, String direccion, String nit, int idUser) {
+    public datosFactura(String nombre, String direccion, String nit, int idUser) {
         this.nombre = nombre;
         this.direccion = direccion;
         Nit = nit;

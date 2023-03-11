@@ -37,5 +37,11 @@ public class menuUser {
                 menuTarjetas.irMenuTarjetas();
             }
         });
+        datosDeFacturacionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                menuDatosFac.irMenuDatosFact();
+            }
+        });
     }
 }

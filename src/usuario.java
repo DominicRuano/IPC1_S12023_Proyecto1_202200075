@@ -13,6 +13,7 @@ public class usuario {
     private String telefono;
     private String rol;
     private String fotografia;
+    private int idUser;
     public static ArrayList<usuario> misUsuarios = new ArrayList<>();
 
     public String getCorreo() {
@@ -111,8 +112,17 @@ public class usuario {
         this.fotografia = fotografia;
     }
 
-    public usuario(String correo, String nombre, String apellido, String password, String dpi, String fechaNacimiento,
-                   String genero, String nacionalidad, String alias, String telefono, String rol, String fotografia) {
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public usuario(String correo, String nombre, String apellido, String password, String dpi,
+                   String fechaNacimiento, String genero, String nacionalidad, String alias, String telefono,
+                   String rol, String fotografia, int idUser) {
         this.correo = correo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -125,6 +135,7 @@ public class usuario {
         this.telefono = telefono;
         this.rol = rol;
         this.fotografia = fotografia;
+        this.idUser = idUser;
     }
 
     @Override

@@ -22,6 +22,7 @@ public class registroUsuarios {
     private JTextField txtFecha;
     private JButton regresarButton;
     private String direcccion = "";
+    private int valor = 0;
     public static void irRegistrousuario(){
         Main.frame.setContentPane(new registroUsuarios().registroUsuario);
         Main.frame.pack();
@@ -40,7 +41,10 @@ public class registroUsuarios {
                 txtAlias.getText(),
                 txtTelefono.getText(),
                 cboRol.getSelectedItem().toString(),
-                direcccion));
+                direcccion,
+                valor));
+        valor += 1;
+
     }
 
 

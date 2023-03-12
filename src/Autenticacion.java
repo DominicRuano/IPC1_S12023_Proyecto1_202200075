@@ -12,11 +12,11 @@ public class Autenticacion{
     private JButton crearUsuarioButton;
     public String correo = "1";
     public String pass = "";
-    public static int idUser= -1;
+    public static int idUser = 0;
     public boolean validarCredenciales(){
         idUser = -1;
         for (usuario i : usuario.misUsuarios) {
-            idUser += 1;
+            idUser = i.getIdUser();
             if (txtCorreo.getText().equals(i.getCorreo()) && txtContrasena.getText().equals(i.getPassword())){
                 return true;
             }

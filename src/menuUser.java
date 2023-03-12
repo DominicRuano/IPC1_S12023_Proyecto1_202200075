@@ -9,8 +9,7 @@ public class menuUser {
     private JButton datosDeFacturacionButton;
     private JButton cotizarButton;
     private JButton comprarButton;
-    private JButton descargarFacturaGuiaButton;
-    private JButton enviosSolicitadosButton;
+    private JButton enviosButton;
     private JPanel MenuUser;
     public static void irMenuUser(){
         Main.frame.setContentPane(new menuUser().MenuUser);
@@ -47,6 +46,18 @@ public class menuUser {
             @Override
             public void actionPerformed(ActionEvent e) {
                 menuCotizar.irMenuCoticar();
+            }
+        });
+        comprarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                menuComprar.irMenucompra();
+            }
+        });
+        enviosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }

@@ -43,5 +43,11 @@ public class menuUser {
                 menuDatosFac.irMenuDatosFact();
             }
         });
+        cotizarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                menuCotizar.irMenuCoticar();
+            }
+        });
     }
 }

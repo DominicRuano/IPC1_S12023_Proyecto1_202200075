@@ -10,7 +10,7 @@ public class Autenticacion{
     private JLabel contrasenaLabel;
     private JButton iniciarSesionButton;
     private JButton crearUsuarioButton;
-    public String correo = "";
+    public String correo = "1";
     public String pass = "";
     public static int idUser= -1;
     public boolean validarCredenciales(){

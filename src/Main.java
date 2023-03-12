@@ -12,12 +12,26 @@ public class Main {
         region.misRegiones.add(new region("soc", "Suroccidente", 29.00, 34.00));
         region.misRegiones.add(new region("noc", "Norocidente", 40.00, 44.50));
 
-        usuario.misUsuarios.add(new usuario("11", "", "", "", "", "",
+        usuario.misUsuarios.add(new usuario("", "", "", "", "", "",
                 "", "", "", "", "", ""));
         usuario.misUsuarios.add(new usuario("22", "", "", "", "", "",
                 "", "", "", "", "", ""));
 
-        frame = new JFrame("Ingreso de Credenciales");
+        departamento.misDepartamentos.add(new departamento("","",0,0,
+                "NOC","Metropolitana","Guatemala"));
+
+        departamento.misDepartamentos.add(new departamento("","",0,0,
+                "NO","Norte","Mixco"));
+
+        municipio.misMunicipios.add(new municipio("","",0,0,"","",
+                "","Mixco","1ro De Julio"));
+        municipio.misMunicipios.add(new municipio("","",0,0,"","",
+                "","Guatemala","Guatemala"));
+
+        datosFactura.misFacturas.add(new datosFactura("Dominic","m 23 l 30 villas del quetzal","26795431",0));
+        datosFactura.misFacturas.add(new datosFactura("Juan Pablo","avenida siempre viva 742","34256780",0));
+
+        frame = new JFrame("USAC-Delivery");
         frame.setContentPane(new Autenticacion().Autenticacion);
         //frame.setContentPane(new registroUsuarios().registroUsuario);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

@@ -12,7 +12,7 @@ public class reportePaquetes {
     public static void irReportes(){
         Main.frame.setContentPane(new reportePaquetes().panel1);
         Main.frame.pack();
-        Main.frame.setSize(300, 300);
+        Main.frame.setSize(600, 300);
     }
 
     public reportePaquetes() {

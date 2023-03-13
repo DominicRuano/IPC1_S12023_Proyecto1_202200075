@@ -14,7 +14,7 @@ public class menuUser {
     public static void irMenuUser(){
         Main.frame.setContentPane(new menuUser().MenuUser);
         Main.frame.pack();
-        Main.frame.setSize(600, 200);
+        Main.frame.setSize(500, 200);
     }
 
     public menuUser() {

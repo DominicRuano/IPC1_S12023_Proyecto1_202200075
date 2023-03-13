@@ -49,6 +49,11 @@ public class registroUsuarios {
 
 
     public registroUsuarios() {
+
+        for (kiosco i: kiosco.misKioscos) {
+            cboRol.addItem(i);
+        }
+
     subirFotografiaButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {

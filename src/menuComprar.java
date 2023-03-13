@@ -149,9 +149,7 @@ public menuComprar() {
                     val2 += 1;
 
                     generarFacturaButton.setEnabled(true);
-                    generarGuiaButton.setEnabled(true);
 
-                    cotizaciones.misCotizaciones.remove(cboAddCotizacion.getSelectedIndex());
 
                     JOptionPane.showMessageDialog(null, "Se Completo la compra por favor descarga la Factura y la guia o ingresa a ver envios para descargarlas.");
                 }else {JOptionPane.showMessageDialog(null, "Por favor ingrese un CVV Valido");}
@@ -190,7 +188,6 @@ public menuComprar() {
 
                 generarFacturaButton.setEnabled(true);
 
-                cotizaciones.misCotizaciones.remove(cboAddCotizacion.getSelectedIndex());
                 JOptionPane.showMessageDialog(null, "Se Completo la compra por favor descarga la Factura y la guia.");
 
             }

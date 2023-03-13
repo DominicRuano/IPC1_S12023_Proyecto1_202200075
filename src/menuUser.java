@@ -57,7 +57,7 @@ public class menuUser {
         enviosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                menuEnvios.irMenuEnvios();
             }
         });
     }

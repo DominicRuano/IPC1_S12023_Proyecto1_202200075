@@ -42,7 +42,7 @@ public menuAdmin() {
     reportesButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            menuReportes.irReportes();
+            reportePaquetes.irReportes();
         }
     });
 }

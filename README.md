@@ -43,4 +43,4 @@ se genera apartir de los archivos **.inv, .mov** un archivo **.txt** el cual con
 ___
 ## Funciones dentro del codigo
 
-![funcion main](https://dominic-juan-pab.imgbb.com/)
+![funcion main](https://i.ibb.co/FKMV3zd/code.png)
